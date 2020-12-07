@@ -1,0 +1,21 @@
+on: [push]
+
+jobs:
+  assume_role:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assume Role
+        uses: youyo/awscredswrap@v1
+        with:
+          role_arn: ${{ secrets.ROLE_ARN }}
+          duration_seconds: 3600
+          role_session_name: 'awscredswrap@GitHubActions'
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'ap-northeast-1'
+      - name: Install aws-cli
+        uses: chrislennon/action-aws-cli@v1.1
+      - name: Identity Check
+        run: aws sts get-caller-identity
+        
