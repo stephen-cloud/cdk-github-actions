@@ -19,6 +19,6 @@ RUN apt-get update \
 
 COPY ./start.sh .
 RUN chmod +x start.sh
-RUN ls -l
+RUN ls -lt
 
 CMD ["./start.sh"]
