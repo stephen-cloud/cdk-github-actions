@@ -2,7 +2,7 @@ import { Port, SecurityGroup, Vpc, Protocol } from "@aws-cdk/aws-ec2";
 import { Cluster, ContainerImage, Secret } from "@aws-cdk/aws-ecs";
 import { ApplicationLoadBalancedFargateService } from "@aws-cdk/aws-ecs-patterns";
 import * as secretsmanager from "@aws-cdk/aws-secretsmanager";
-import { App, Stack, StackProps } from "@aws-cdk/core";
+import { App, Duration, Stack, StackProps } from "@aws-cdk/core";
 import path = require("path");
 
 export class SelfHostedGitHubActionsStack extends Stack {
@@ -26,6 +26,7 @@ export class SelfHostedGitHubActionsStack extends Stack {
           PAT: Secret.fromSecretsManager(pat)
         }
       },
+      healthCheckGracePeriod: Duration.minutes(2),
     });
   }
 }

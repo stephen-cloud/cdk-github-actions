@@ -1,3 +1,5 @@
+![CI](https://github.com/stephen-cloud/cdk-github-actions/workflows/CI/badge.svg?branch=main)
+
 # Welcome to your CDK TypeScript project!
 
 You should explore the contents of this project. It demonstrates a CDK app with an instance of a stack (`CdkGithubActionsStack`)
