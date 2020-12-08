@@ -17,7 +17,10 @@ jobs:
         with: 
           aws-region: us-east-1
 
-      - name: update
+      - name: Run a one-line script
+        run: echo hi
+
+      - name: Run a multi-line script
         run: |
           apt-get -y update
           apt-get -y upgrade
