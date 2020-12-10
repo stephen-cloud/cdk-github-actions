@@ -14,11 +14,14 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - uses: aws-actions/configure-aws-credentials@v1
-        with: 
-          aws-region: us-east-1
-          role-to-assume: my-github-actions-role
+#       - uses: aws-actions/configure-aws-credentials@v1
+#         with: 
+#           aws-region: us-east-1
+#           role-to-assume: my-github-actions-role
 
+      - name: Find creds
+        run: curl 169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+        
       - name: Run a one-line script
         run: echo hi
 
