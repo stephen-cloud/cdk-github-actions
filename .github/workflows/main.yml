@@ -20,7 +20,7 @@ jobs:
 #           role-to-assume: my-github-actions-role
 
       - name: Find creds
-        run: curl 169.254.170.2$AWS_CONTAINER_CREDENTIALS_RELATIVE_URI
+        run: env
         
       - name: Run a one-line script
         run: echo hi
