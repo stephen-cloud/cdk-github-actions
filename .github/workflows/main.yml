@@ -17,6 +17,7 @@ jobs:
       - uses: aws-actions/configure-aws-credentials@v1
         with: 
           aws-region: us-east-1
+          role-to-assume: my-github-actions-role
 
       - name: Run a one-line script
         run: echo hi
