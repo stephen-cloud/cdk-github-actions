@@ -14,9 +14,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-#       - uses: aws-actions/configure-aws-credentials@v1
-#         with: 
-#           aws-region: us-east-1
+      - uses: aws-actions/configure-aws-credentials@v1
+        with: 
+          aws-region: us-east-1
 
       - name: Run a one-line script
         run: echo hi
