@@ -1,4 +1,4 @@
-import { Port, SecurityGroup, Vpc, Protocol } from "@aws-cdk/aws-ec2";
+import { Port, SecurityGroup, Vpc } from "@aws-cdk/aws-ec2";
 import { Cluster, ContainerImage, Secret } from "@aws-cdk/aws-ecs";
 import { ApplicationLoadBalancedFargateService } from "@aws-cdk/aws-ecs-patterns";
 import * as secretsmanager from "@aws-cdk/aws-secretsmanager";

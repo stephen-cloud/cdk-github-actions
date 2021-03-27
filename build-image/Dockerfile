@@ -18,8 +18,8 @@ RUN apt-get install -y --no-install-recommends \
     awscli
 
 RUN mkdir actions-runner && cd actions-runner
-RUN curl -O -L https://github.com/actions/runner/releases/download/v2.274.2/actions-runner-linux-x64-2.274.2.tar.gz
-RUN tar xzf ./actions-runner-linux-x64-2.274.2.tar.gz
+RUN curl -O -L https://github.com/actions/runner/releases/download/v2.277.1/actions-runner-linux-x64-2.277.1.tar.gz
+RUN tar xzf ./actions-runner-linux-x64-2.277.1.tar.gz
 
 COPY ./start.sh .
 RUN chmod +x start.sh
